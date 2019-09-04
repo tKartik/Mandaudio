@@ -9,7 +9,7 @@ let rad,
   c,
   val = 0;
 let hide = true;
-//
+let firstShow = true; //
 
 function preload() {
   myFont = loadFont("./assets/Josefin.ttf");
@@ -17,6 +17,8 @@ function preload() {
 
 function mouseClicked() {
   rad = random(100, 600);
+  getAudioContext().resume();
+  firstShow = false;
 }
 
 function keyPressed() {
@@ -65,13 +67,21 @@ function draw() {
   let lol = map(mouseX, 0, windowWidth, 1, 60);
   let gol = map(mouseY, 0, windowHeight, -1, 1);
 
+  textSize(50);
+  if (firstShow) {
+    fill(220, 100);
+    rect(10, 10, windowWidth - 20, windowHeight - 20);
+    fill(20);
+    text("Click anywhere to start", windowWidth / 2 - 250, windowHeight / 2);
+  }
+
   textSize(18);
   if (hide) {
     fill(220, 10);
     rect(windowWidth - 410, 25, 388, 150);
     fill(220);
     text(
-      "Instructions - \n -Press Up Arrow to change sensitivity of your mic \n -Press Space to change color theme \n -Left CLick on your mouse for a new Mandala \n -Move around your mouse ;) \n -Press 'i' to hide/show instructions",
+      "Instructions - \n -Press Up Arrow to change sensitivity of your mic \n -Press Space to change color theme \n -Mouse Click for a new Mandala \n -Move around your mouse ;) \n -Press 'i' to hide/show instructions",
       windowWidth - 400,
       50
     );
