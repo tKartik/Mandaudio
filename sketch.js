@@ -3,12 +3,13 @@ let amplitude;
 let myFont;
 let amp;
 let mapMax = 1;
-let sensitivity = 1;
+let sensitivity = 3;
 let time = 0;
 let rad,
   c,
   val = 0;
 let hide = true;
+//
 
 function preload() {
   myFont = loadFont("./assets/Josefin.ttf");
