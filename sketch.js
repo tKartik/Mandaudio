@@ -19,7 +19,7 @@ function mouseClicked() {
   if (windowWidth > 1000) {
     rad = random(100, 600);
   } else {
-    rad = random(windowWidth / 4, windowHeight / 2);
+    rad = random(windowWidth / 4, windowHeight / 3);
   }
 
   getAudioContext().resume();
@@ -180,7 +180,7 @@ function draw() {
       text("Sensitivity: Very High", 35, 35);
     }
   } else {
-    amp = 2000; //for mobile only one
+    amp = 1200; //for mobile only one
   }
 
   angleMode(DEGREES);
