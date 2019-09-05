@@ -116,7 +116,7 @@ function draw() {
       );
       textSize(16);
       text(
-        "Instructions - \n This is an interactive Mandala \nSimulation, please allow the browser \nto access your mic. \n -Tap and drag to change\n color of Mandalas\n -Drag your finger to \nchange radius of mandala ",
+        "Instructions - \n This is an interactive Mandala \nSimulation, please allow the browser \nto access your mic. \n -Tap to change the\n color of Mandalas\n -Drag your finger around to \nchange radius& speed of mandala ",
         windowWidth / 2,
         windowHeight / 2 - 100
       );
