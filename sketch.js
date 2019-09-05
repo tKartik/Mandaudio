@@ -1,5 +1,6 @@
 let mic, soundFile;
 let amplitude;
+let randColor;
 let myFont;
 let amp;
 let mapMax = 1;
@@ -74,8 +75,11 @@ function draw() {
   background(20, 50);
 
   let level = amplitude.getLevel();
-  let randColor = map(level, 0, mapMax, 0, amp);
-  // console.log(randColor);
+  if (windowWidth > 1000) {
+    randColor = map(level, 0, mapMax, 0, amp);
+  } else {
+    randColor = map(level, 0, mapMax, -70, 255);
+  } // console.log(randColor);
 
   let m = map(mouseX, 0, windowWidth, 15, 6);
   let lol = map(mouseX, 0, windowWidth, 1, 60);
