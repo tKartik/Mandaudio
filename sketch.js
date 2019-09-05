@@ -76,7 +76,7 @@ function draw() {
     text("Click anywhere to start", windowWidth / 2, windowHeight / 2 + 70);
     textSize(30);
     text(
-      "This is an interactive Mandala Simulation, please allow\n the browser to access your mic. \n If you don't see any significant variation in colors, try changing the sensitivity.",
+      "This is an interactive Mandala Simulation, please allow\n the browser to access your mic. \n If you don't see any significant variation in colors, try changing the sensitivity. ",
       windowWidth / 2,
       windowHeight / 2 - 70
     );
@@ -86,10 +86,10 @@ function draw() {
   textSize(18);
   if (hide) {
     fill(220, 10);
-    rect(windowWidth - 410, 25, 388, 150);
+    rect(windowWidth - 410, 25, 388, 175);
     fill(220);
     text(
-      "Instructions - \n -Press Up Arrow to change sensitivity of your mic \n -Press Space to change color theme \n -Mouse Click for a new Mandala \n -Move around your mouse ;) \n -Press 'i' to hide/show instructions",
+      "Instructions - \n -Press Up Arrow to change sensitivity of your mic \n -Press Space to change color theme \n -Mouse Click for a new Mandala \n -Move around your mouse ;) \n -Press 'i' to hide/show instructions \n Press F11 and then F5 to enter full screen mode",
       windowWidth - 400,
       50
     );
