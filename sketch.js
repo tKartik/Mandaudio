@@ -180,7 +180,7 @@ function draw() {
       text("Sensitivity: Very High", 35, 35);
     }
   } else {
-    amp = 1200; //for mobile only one
+    amp = 755; //for mobile only one
   }
 
   angleMode(DEGREES);
