@@ -16,9 +16,23 @@ function preload() {
 }
 
 function mouseClicked() {
-  rad = random(100, 600);
+  if (windowWidth > 1000) {
+    rad = random(100, 600);
+  } else {
+    rad = random(windowWidth - 100, windowHeight - 100);
+  }
+
   getAudioContext().resume();
   firstShow = false;
+  if (windowWidth < 1000) {
+    if (val < 3) {
+      val++;
+    }
+    if (val == 3) {
+      val = 0;
+    }
+    firstShow = false;
+  }
 }
 
 function keyPressed() {
@@ -67,37 +81,62 @@ function draw() {
   let lol = map(mouseX, 0, windowWidth, 1, 60);
   let gol = map(mouseY, 0, windowHeight, -1, 1);
 
+  //Mobile friendly instructions
   textAlign(CENTER);
-  if (firstShow) {
-    fill(220, 100);
-    rect(10, 10, windowWidth - 20, windowHeight - 20);
-    textSize(50);
-    fill(20);
-    text("Click anywhere to start", windowWidth / 2, windowHeight / 2 + 70);
-    textSize(30);
-    text(
-      "This is an interactive Mandala Simulation, please allow\n the browser to access your mic. \n If you don't see any significant variation in colors, try changing the sensitivity. ",
-      windowWidth / 2,
-      windowHeight / 2 - 70
-    );
+  if (windowWidth > 1000) {
+    if (firstShow) {
+      fill(220, 100);
+      rect(10, 10, windowWidth - 20, windowHeight - 20);
+      textSize(50);
+      fill(20);
+      text("Click anywhere to start", windowWidth / 2, windowHeight / 2 + 70);
+      textSize(30);
+      text(
+        "This is an interactive Mandala Simulation, please allow\n the browser to access your mic. \n If you don't see any significant variation in colors, try changing the sensitivity. ",
+        windowWidth / 2,
+        windowHeight / 2 - 70
+      );
+    }
+  } else {
+    if (firstShow) {
+      fill(220, 100);
+      rect(10, 10, windowWidth - 20, windowHeight - 20);
+      textSize(20);
+      fill(30);
+      text("Tap anywhere to start", windowWidth / 2, windowHeight / 2 + 90);
+      textSize(16);
+      text(
+        "Instructions - \n This is an interactive Mandala \nSimulation, please allow the browser \nto access your mic. \n -Tap and drag to change\n color of Mandalas\n -Drag your finger to \nchange radius of mandala ",
+        windowWidth / 2,
+        windowHeight / 2 - 90
+      );
+    }
   }
 
-  textAlign(LEFT);
-  textSize(18);
-  if (hide) {
-    fill(220, 10);
-    rect(windowWidth - 410, 25, 388, 175);
-    fill(220);
-    text(
-      "Instructions - \n -Press Up Arrow to change sensitivity of your mic \n -Press Space to change color theme \n -Mouse Click for a new Mandala \n -Move around your mouse ;) \n -Press 'i' to hide/show instructions \n Press F11 and then F5 to enter full screen mode",
-      windowWidth - 400,
-      50
-    );
+  if (windowWidth > 1000) {
+    textAlign(LEFT);
+    textSize(18);
+    if (hide) {
+      fill(220, 10);
+      rect(windowWidth - 410, 25, 388, 175);
+      fill(220);
+      text(
+        "Instructions - \n -Press Up Arrow to change sensitivity of your mic \n -Press Space to change color theme \n -Mouse Click for a new Mandala \n -Move around your mouse ;) \n -Press 'i' to hide/show instructions \n Press F11 and then F5 to enter full screen mode",
+        windowWidth - 400,
+        50
+      );
+    }
   }
 
   textSize(12);
   fill(220);
-  text("Created with <3 by Kartik", windowWidth - 160, windowHeight - 10);
+  if (windowWidth > 1000) {
+    text("Created with <3 by Kartik", windowWidth - 160, windowHeight - 10);
+  } else {
+    fill(220, 40);
+    textAlign(CENTER);
+    text("Created with <3 by Kartik", windowWidth / 2, windowHeight - 10);
+  }
 
   // To change background color
   if (val == 0) {
@@ -111,27 +150,31 @@ function draw() {
   }
 
   //to change sensitivity
-  fill(220);
-  textFont(myFont);
-  if (sensitivity == 1) {
-    amp = 255;
-    textSize(18);
-    text("Sensitivity: Low", 35, 35);
-  }
-  if (sensitivity == 2) {
-    amp = 900;
-    textSize(18);
-    text("Sensitivity: Medium", 35, 35);
-  }
-  if (sensitivity == 3) {
-    amp = 1800;
-    textSize(18);
-    text("Sensitivity: High", 35, 35);
-  }
-  if (sensitivity == 4) {
-    amp = 3500;
-    textSize(18);
-    text("Sensitivity: Very High", 35, 35);
+  if (windowWidth > 1000) {
+    fill(220);
+    textFont(myFont);
+    if (sensitivity == 1) {
+      amp = 255;
+      textSize(18);
+      text("Sensitivity: Low", 35, 35);
+    }
+    if (sensitivity == 2) {
+      amp = 900;
+      textSize(18);
+      text("Sensitivity: Medium", 35, 35);
+    }
+    if (sensitivity == 3) {
+      amp = 1800;
+      textSize(18);
+      text("Sensitivity: High", 35, 35);
+    }
+    if (sensitivity == 4) {
+      amp = 3500;
+      textSize(18);
+      text("Sensitivity: Very High", 35, 35);
+    }
+  } else {
+    amp = 2800;
   }
 
   angleMode(DEGREES);
