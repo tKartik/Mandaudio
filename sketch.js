@@ -78,7 +78,7 @@ function draw() {
   if (windowWidth > 1000) {
     randColor = map(level, 0, mapMax, 0, amp);
   } else {
-    randColor = map(level, 0, mapMax, -70, 255);
+    randColor = map(level, 0, mapMax, -30, 255);
   } // console.log(randColor);
 
   let m = map(mouseX, 0, windowWidth, 15, 6);
