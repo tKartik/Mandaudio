@@ -67,14 +67,22 @@ function draw() {
   let lol = map(mouseX, 0, windowWidth, 1, 60);
   let gol = map(mouseY, 0, windowHeight, -1, 1);
 
-  textSize(50);
+  textAlign(CENTER);
   if (firstShow) {
     fill(220, 100);
     rect(10, 10, windowWidth - 20, windowHeight - 20);
+    textSize(50);
     fill(20);
-    text("Click anywhere to start", windowWidth / 2 - 250, windowHeight / 2);
+    text("Click anywhere to start", windowWidth / 2, windowHeight / 2 + 70);
+    textSize(30);
+    text(
+      "This is an interactive Mandala Simulation, please allow\n the browser to access your mic. \n If you don't see any significant variation in colors, try changing the sensitivity.",
+      windowWidth / 2,
+      windowHeight / 2 - 70
+    );
   }
 
+  textAlign(LEFT);
   textSize(18);
   if (hide) {
     fill(220, 10);
