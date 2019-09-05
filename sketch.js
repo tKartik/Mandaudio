@@ -101,14 +101,20 @@ function draw() {
     if (firstShow) {
       fill(220, 100);
       rect(10, 10, windowWidth - 20, windowHeight - 20);
-      textSize(20);
       fill(30);
+      textSize(20);
       text("Tap anywhere to start", windowWidth / 2, windowHeight / 2 + 90);
+      textSize(15);
+      text(
+        "Use it on your laptop for better experience",
+        windowWidth / 2,
+        windowHeight / 2 + 110
+      );
       textSize(16);
       text(
         "Instructions - \n This is an interactive Mandala \nSimulation, please allow the browser \nto access your mic. \n -Tap and drag to change\n color of Mandalas\n -Drag your finger to \nchange radius of mandala ",
         windowWidth / 2,
-        windowHeight / 2 - 90
+        windowHeight / 2 - 100
       );
     }
   }
